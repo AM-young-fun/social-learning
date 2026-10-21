@@ -1,0 +1,25 @@
+{
+  "name": "social-learning",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local-only X profile activity collector for learning interaction patterns.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --no-warnings src/server.js",
+    "dev": "node --watch --no-warnings src/server.js",
+    "smoke": "node --no-warnings scripts/smoke-test.js"
+  },
+  "keywords": [
+    "local-first",
+    "sqlite",
+    "chrome-extension",
+    "learning"
+  ],
+  "license": "UNLICENSED",
+  "dependencies": {
+    "echarts": "^6.1.0"
+  }
+}

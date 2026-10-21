@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Social Learning</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>Social Learning</h1>
+        <p>本机 X 公开活动样本学习面板</p>
+      </div>
+      <a class="export-link" href="/api/export.json">导出 JSON</a>
+    </header>
+
+    <main class="layout">
+      <aside class="sidebar">
+        <div class="section-title">Profiles</div>
+        <div id="profile-list" class="profile-list"></div>
+      </aside>
+
+      <section class="workspace">
+        <div id="empty-state" class="empty-state">
+          启动浏览器插件后，访问 X 用户主页即可在这里看到本地样本。
+        </div>
+
+        <div id="profile-view" class="profile-view hidden">
+          <div class="profile-heading">
+            <div>
+              <h2 id="profile-name"></h2>
+              <p id="profile-meta"></p>
+            </div>
+            <select id="range-select" aria-label="时间范围">
+              <option value="7">最近 7 天</option>
+              <option value="30" selected>最近 30 天</option>
+              <option value="90">最近 90 天</option>
+              <option value="366">最近 1 年</option>
+            </select>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat">
+              <span>已观察内容</span>
+              <strong id="stat-items">0</strong>
+            </div>
+            <div class="stat">
+              <span>访问记录</span>
+              <strong id="stat-visits">0</strong>
+            </div>
+            <div class="stat">
+              <span>最高单日发帖</span>
+              <strong id="stat-max-day">0</strong>
+            </div>
+            <div class="stat">
+              <span>常见活跃小时</span>
+              <strong id="stat-hour">-</strong>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="section-title">内容分析</div>
+            <div id="content-summary" class="content-summary"></div>
+            <div id="keyword-cloud" class="keyword-cloud"></div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-heading">
+              <div class="section-title">小时分布</div>
+            </div>
+            <div id="hour-chart" class="hour-chart" aria-label="每小时发帖、回复、点赞堆叠柱状图"></div>
+          </div>
+
+          <div class="panel">
+            <div class="section-title">按天聚合</div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>日期</th>
+                    <th>内容数</th>
+                    <th>回复型内容</th>
+                    <th>平均点赞</th>
+                    <th>平均回复</th>
+                  </tr>
+                </thead>
+                <tbody id="daily-table"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="section-title">已抓取 Timeline</div>
+            <div id="recent-items" class="recent-items"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/vendor/echarts.min.js"></script>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

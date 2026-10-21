@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Social Learning Local Collector",
+  "version": "0.1.0",
+  "description": "Records visible X profile activity metadata to a local server.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:3197/*",
+    "http://localhost:3197/*"
+  ],
+  "action": {
+    "default_title": "Social Learning",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

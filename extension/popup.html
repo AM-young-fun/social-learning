@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <title>Social Learning</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <header>
+      <h1>Social Learning</h1>
+      <span id="status" class="status">Checking</span>
+    </header>
+
+    <label class="toggle">
+      <input id="enabled" type="checkbox">
+      <span>记录当前可见内容</span>
+    </label>
+
+    <div class="actions">
+      <button id="capture-now" type="button">抓取当前页</button>
+      <button id="timeline-pass" type="button">慢速滚动采集</button>
+    </div>
+
+    <dl class="diagnostics">
+      <div>
+        <dt>Profile</dt>
+        <dd id="diag-profile">-</dd>
+      </div>
+      <div>
+        <dt>Articles</dt>
+        <dd id="diag-articles">-</dd>
+      </div>
+      <div>
+        <dt>Parsed</dt>
+        <dd id="diag-parsed">-</dd>
+      </div>
+      <div>
+        <dt>Sent</dt>
+        <dd id="diag-sent">-</dd>
+      </div>
+      <div class="wide">
+        <dt>Last</dt>
+        <dd id="diag-last">-</dd>
+      </div>
+      <div class="wide">
+        <dt>Sample</dt>
+        <dd id="diag-sample">-</dd>
+      </div>
+    </dl>
+
+    <a id="dashboard" href="http://127.0.0.1:3197/" target="_blank" rel="noreferrer">打开本地面板</a>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
